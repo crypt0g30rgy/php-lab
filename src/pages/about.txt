@@ -1,0 +1,6 @@
+About Us
+========
+
+This page contains information about our company.
+
+We are a fictional company created for security testing purposes.

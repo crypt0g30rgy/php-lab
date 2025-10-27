@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  php-lab:
+    build: .
+    container_name: path-traversal-lab
+    ports:
+      - "8090:80"
+    volumes:
+      - ./src:/var/www/html
+    restart: unless-stopped
+    environment:
+      # Lab environment variables
+      - PHP_ENV=development
+      - LAB_NAME=Path Traversal Lab
+      # Security testing framework (optional - disable if not using Aikido)
+      - AIKIDO_BLOCKING=${AIKIDO_BLOCKING:-1}
+      - AIKIDO_DEBUG=${AIKIDO_DEBUG:-1}
+      - AIKIDO_BLOCK=${AIKIDO_BLOCK:-1}
+    labels:
+      - "com.lab.type=security-training"
+      - "com.lab.vulnerability=path-traversal"
+      - "com.lab.warning=deliberately-vulnerable"
+    networks:
+      - lab-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+
+networks:
+  lab-network:
+    driver: bridge

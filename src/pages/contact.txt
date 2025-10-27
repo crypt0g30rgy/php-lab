@@ -1,0 +1,7 @@
+Contact Information
+==================
+
+Email: contact@example.com
+Phone: 555-0123
+
+This is a public contact page.

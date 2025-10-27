@@ -1,0 +1,6 @@
+Welcome to the Home Page
+========================
+
+This is a legitimate page that users should be able to access.
+
+Content: General information about the website.
