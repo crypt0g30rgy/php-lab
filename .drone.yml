@@ -4,7 +4,7 @@ name: default
 
 steps:
   - name: test
-    image: alpine
+    image: arm64v8/alpine:3.18
     commands:
-      - echo "Running 0n Drone inside Raspberry Pi 5!"
       - uname -m
+      - echo "Running on ARM64 Pi 5"
