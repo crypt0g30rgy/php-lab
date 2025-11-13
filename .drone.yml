@@ -1,28 +1,3 @@
-# kind: pipeline
-# type: docker
-# name: default
-
-# steps:
-#   - name: test
-#     image: arm64v8/alpine:3.18
-#     commands:
-#       - uname -m
-#       - echo "Running on ARM64 Pi 5"
-
-# .drone.yml:1-13
-# ---
-# kind: "pipeline"
-# name: "demo"
-# steps:
-#   - name: "test"
-#     image: "debian:stretch-slim"
-#     commands:
-#       - echo "Hello!"
-# trigger:
-#   branch:
-#     - main
-
----
 kind: pipeline
 type: ssh
 name: default
