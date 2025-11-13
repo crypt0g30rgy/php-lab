@@ -1,14 +1,11 @@
+#.drone.yml
 kind: pipeline
-type: ssh
+type: docker
 name: default
-
-server:
-  host: 1.2.3.4
-  user: root
-  password:
-    from_secret: password
 
 steps:
 - name: greeting
+  image: alpine
   commands:
-  - echo hello world
+  - echo hello
+  - echo world
